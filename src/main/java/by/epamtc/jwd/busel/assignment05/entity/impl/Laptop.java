@@ -7,16 +7,17 @@ public class Laptop implements Appliance {
     private Type type;
     private double batteryCapacity;
     private String operatingSystem;
-    private int memoryRom;
-    private int systemMemory;
+    private double memoryRom;
+    private double systemMemory;
     private double cpu;
-    private int displayInches;
+    private double displayInches;
 
     public Laptop() {
     }
 
     public Laptop(Type type, double batteryCapacity, String operatingSystem,
-            int memoryRom, int systemMemory, double cpu, int displayInches) {
+            double memoryRom, double systemMemory, double cpu,
+            double displayInches) {
         this.type = type;
         this.batteryCapacity = batteryCapacity;
         this.operatingSystem = operatingSystem;
@@ -50,19 +51,19 @@ public class Laptop implements Appliance {
         this.operatingSystem = operatingSystem;
     }
 
-    public int getMemoryRom() {
+    public double getMemoryRom() {
         return memoryRom;
     }
 
-    public void setMemoryRom(int memoryRom) {
+    public void setMemoryRom(double memoryRom) {
         this.memoryRom = memoryRom;
     }
 
-    public int getSystemMemory() {
+    public double getSystemMemory() {
         return systemMemory;
     }
 
-    public void setSystemMemory(int systemMemory) {
+    public void setSystemMemory(double systemMemory) {
         this.systemMemory = systemMemory;
     }
 
@@ -74,11 +75,11 @@ public class Laptop implements Appliance {
         this.cpu = cpu;
     }
 
-    public int getDisplayInches() {
+    public double getDisplayInches() {
         return displayInches;
     }
 
-    public void setDisplayInches(int displayInches) {
+    public void setDisplayInches(double displayInches) {
         this.displayInches = displayInches;
     }
 
