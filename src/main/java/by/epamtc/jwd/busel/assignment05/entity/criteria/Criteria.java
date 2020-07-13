@@ -17,6 +17,10 @@ public class Criteria {
         return searchGroupName;
     }
 
+    public Map<String, Object> getParameters() {
+        return parameters;
+    }
+
     public void add(String parameter, Object value) {
         parameters.put(parameter, value);
     }
