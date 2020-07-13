@@ -66,13 +66,13 @@ public final class SearchCriteria {
         }
     }
 
-    public enum TabletPC {
+    public enum TabletPc {
         BATTERY_CAPACITY(DOUBLE_CLASS), DISPLAY_INCHES(DOUBLE_CLASS),
         MEMORY_ROM(DOUBLE_CLASS), FLASH_MEMORY_CAPACITY(DOUBLE_CLASS),
         COLOR(STRING_CLASS);
         Class<?> classStructure;
 
-        TabletPC(Class<?> classStructure) {
+        TabletPc(Class<?> classStructure) {
             this.classStructure = classStructure;
         }
 
