@@ -9,8 +9,7 @@ public class CriteriaValidator {
 
     public boolean isCriteriaValid(Criteria criteria) {
         Appliance.Type type = criteria.getSearchGroupName();
-        CriteriaValidation validation;
-        validation = provider.getCommand(type);
+        CriteriaValidation validation = provider.getValidation(type);
         return validation.isValid(criteria);
     }
 }
