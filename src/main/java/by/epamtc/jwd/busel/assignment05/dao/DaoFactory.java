@@ -5,7 +5,7 @@ import by.epamtc.jwd.busel.assignment05.dao.impl.FileApplianceDao;
 public class DaoFactory {
     private static final DaoFactory instance = new DaoFactory();
 
-    private static final ApplianceDao applianceDao = new FileApplianceDao();
+    private final ApplianceDao applianceDao = new FileApplianceDao();
 
     private DaoFactory() {
     }
