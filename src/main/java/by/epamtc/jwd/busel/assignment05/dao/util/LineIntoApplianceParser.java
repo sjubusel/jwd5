@@ -1,6 +1,7 @@
 package by.epamtc.jwd.busel.assignment05.dao.util;
 
 import by.epamtc.jwd.busel.assignment05.entity.Appliance;
+import by.epamtc.jwd.busel.assignment05.entity.factory.ApplianceCreator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,11 @@ import java.util.List;
 public class LineIntoApplianceParser {
     private static final String PARAMETER_PAIRS_DELIMITER = ", ";
     private static final String PARAMETER_DELIMITER = "=";
-    private final CommandProvider provider = new CommandProvider();
+    private final ApplianceCreatorProvider provider;
+
+    {
+        provider = new ApplianceCreatorProvider();
+    }
 
     public Appliance parseAppliance(String line, Appliance.Type applianceType) {
         int typePlusDelimiterOffset = applianceType.getName().length() + 3;
@@ -20,7 +25,7 @@ public class LineIntoApplianceParser {
             int delimiterIndex = pair.indexOf(PARAMETER_DELIMITER);
             parameters.add(pair.substring(delimiterIndex + 1));
         }
-        Command executionCommand = provider.getCommand(applianceType);
-        return executionCommand.execute(parameters);
+        ApplianceCreator applianceCreator = provider.getCreator(applianceType);
+        return applianceCreator.createAppliance(parameters);
     }
 }
