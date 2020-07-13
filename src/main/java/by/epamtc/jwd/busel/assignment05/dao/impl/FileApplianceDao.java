@@ -19,8 +19,9 @@ public class FileApplianceDao implements ApplianceDao {
         List<String> correctStringRecords = selector.selectAppliances(criteria);
 
         List<Appliance> appliances = new ArrayList<>();
+        Appliance.Type applianceType = criteria.getSearchGroupName();
         for (String applianceRecord : correctStringRecords) {
-            appliances.add(parser.parseAppliance(applianceRecord));
+            appliances.add(parser.parseAppliance(applianceRecord, applianceType));
         }
 
         return appliances;
