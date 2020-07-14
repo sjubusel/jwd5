@@ -53,8 +53,12 @@ public class LineValidator {
     }
 
     private boolean doesLineContainParameter(String line, String parameter) {
-        Pattern pattern = Pattern.compile("\\b" + parameter + "(?=[^.0-9])");
+        Pattern pattern = Pattern.compile(generateSpecificRegExp(parameter));
         Matcher matcher = pattern.matcher(line);
         return matcher.find();
+    }
+
+    private String generateSpecificRegExp(String parameter) {
+        return "\\b" + parameter + "(?=[^.0-9])";
     }
 }
