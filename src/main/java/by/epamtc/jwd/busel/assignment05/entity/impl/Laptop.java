@@ -88,7 +88,7 @@ public class Laptop implements Appliance {
         if (this == o) {
             return true;
         }
-        if (o == null || this.getClass() != o.getClass()) {
+        if ((o == null) || (this.getClass() != o.getClass())) {
             return false;
         }
         Laptop laptop = (Laptop) o;
