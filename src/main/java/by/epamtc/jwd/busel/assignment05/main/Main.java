@@ -20,7 +20,7 @@ public class Main {
         ////////////////////////////////////////////////////////////////////////
 
         Criteria criteriaOven = new Criteria(Appliance.Type.OVEN);
-        criteriaOven.add(Oven.WIDTH.toString(), 70.0);
+        criteriaOven.add(Oven.DEPTH.toString(), 60.0);
 
         try {
             appliances = service.find(criteriaOven);
