@@ -11,7 +11,7 @@ public class LineValidator {
 
     public boolean isLineValid(String line, Criteria criteria) {
         Map<String, Object> parameters = criteria.getParameters();
-        String applianceType = criteria.getSearchGroupName().toString();
+        String applianceType = criteria.getSearchGroupName().getName();
         if (!line.startsWith(applianceType)) {
             return false;
         }
