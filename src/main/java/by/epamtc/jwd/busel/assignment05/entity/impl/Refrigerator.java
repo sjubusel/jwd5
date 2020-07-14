@@ -85,14 +85,33 @@ public class Refrigerator implements Appliance {
 
     @Override
     public boolean equals(Object o) {
-
-        return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Refrigerator refrigerator = (Refrigerator) o;
+        return (type == refrigerator.type)
+                && powerConsumption == refrigerator.powerConsumption
+                && weight == refrigerator.weight
+                && freezerCapacity == refrigerator.freezerCapacity
+                && overallCapacity == refrigerator.overallCapacity
+                && height == refrigerator.height
+                && width == refrigerator.width;
     }
 
     @Override
     public int hashCode() {
-
-        return -1;
+        int hash = 17;
+        hash = 31 * hash + (type == null ? 0 : type.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(powerConsumption);
+        hash = 31 * hash + (int) Double.doubleToLongBits(weight);
+        hash = 31 * hash + (int) Double.doubleToLongBits(freezerCapacity);
+        hash = 31 * hash + (int) Double.doubleToLongBits(overallCapacity);
+        hash = 31 * hash + (int) Double.doubleToLongBits(height);
+        hash = 31 * hash + (int) Double.doubleToLongBits(width);
+        return hash;
     }
 
     @Override
