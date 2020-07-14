@@ -15,7 +15,8 @@ public class Oven implements Appliance {
     public Oven() {
     }
 
-    public Oven(Type type, double powerConsumption, double weight, double capacity, double depth, double height, double width) {
+    public Oven(Type type, double powerConsumption, double weight,
+            double capacity, double depth, double height, double width) {
         this.type = type;
         this.powerConsumption = powerConsumption;
         this.weight = weight;
@@ -83,14 +84,31 @@ public class Oven implements Appliance {
 
     @Override
     public boolean equals(Object o) {
-
-        return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Oven oven = (Oven) o;
+        return (type == oven.type)
+                && (powerConsumption == oven.powerConsumption)
+                && (weight == oven.weight) && (capacity == oven.capacity)
+                && (depth == oven.depth) && (height == oven.height)
+                && (width == oven.width);
     }
 
     @Override
     public int hashCode() {
-
-        return -1;
+        int hash = 17;
+        hash = 31 * hash + (type == null ? 0 : type.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(powerConsumption);
+        hash = 31 * hash + (int) Double.doubleToLongBits(weight);
+        hash = 31 * hash + (int) Double.doubleToLongBits(capacity);
+        hash = 31 * hash + (int) Double.doubleToLongBits(depth);
+        hash = 31 * hash + (int) Double.doubleToLongBits(height);
+        hash = 31 * hash + (int) Double.doubleToLongBits(width);
+        return hash;
     }
 
     @Override
