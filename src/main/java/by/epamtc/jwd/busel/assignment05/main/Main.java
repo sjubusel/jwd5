@@ -26,7 +26,7 @@ public class Main {
             appliances = service.find(criteriaOven);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
@@ -43,7 +43,7 @@ public class Main {
             appliances = service.find(criteriaLaptop);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
@@ -60,7 +60,7 @@ public class Main {
             appliances = service.find(criteriaRefrigerator);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
@@ -77,7 +77,7 @@ public class Main {
             appliances = service.find(criteriaVacuumCleaner);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
@@ -96,7 +96,7 @@ public class Main {
             appliances = service.find(criteriaTabletPc);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
@@ -114,7 +114,7 @@ public class Main {
             appliances = service.find(criteriaSpeakers);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
@@ -132,7 +132,7 @@ public class Main {
             appliances = service.find(criteriaNotFound);
         } catch (ServiceException e) {
             System.err.println(e.toString());
-            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT US.\n" +
+            System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
             return;
         }
