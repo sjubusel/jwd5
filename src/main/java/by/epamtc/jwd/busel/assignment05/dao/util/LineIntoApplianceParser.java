@@ -17,7 +17,8 @@ public class LineIntoApplianceParser {
 
     public Appliance parseAppliance(String line, Appliance.Type applianceType) {
         int typePlusDelimiterOffset = applianceType.getName().length() + 3;
-        String[] paramPairs = line.substring(typePlusDelimiterOffset)
+        String[] paramPairs = line
+                .substring(typePlusDelimiterOffset, line.length() - 1)
                 .split(PARAMETER_PAIRS_DELIMITER);
 
         List<String> parameters = new ArrayList<>();
