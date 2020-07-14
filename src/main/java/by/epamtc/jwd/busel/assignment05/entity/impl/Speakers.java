@@ -13,7 +13,8 @@ public class Speakers implements Appliance {
     public Speakers() {
     }
 
-    public Speakers(Type type, double powerConsumption, int numberOfSpeakers, String frequentRange, double cordLength) {
+    public Speakers(Type type, double powerConsumption, int numberOfSpeakers,
+            String frequentRange, double cordLength) {
         this.type = type;
         this.powerConsumption = powerConsumption;
         this.numberOfSpeakers = numberOfSpeakers;
@@ -63,14 +64,31 @@ public class Speakers implements Appliance {
 
     @Override
     public boolean equals(Object o) {
-
-        return false;
+        if (this == o) {
+            return true;
+        }
+        if ((o == null) || (this.getClass() != o.getClass())) {
+            return false;
+        }
+        Speakers speakers = (Speakers) o;
+        return (type == speakers.type)
+                && (powerConsumption == speakers.powerConsumption)
+                && (numberOfSpeakers == speakers.numberOfSpeakers)
+                && frequentRange.equals(speakers.frequentRange)
+                && (cordLength == speakers.cordLength);
     }
 
     @Override
     public int hashCode() {
-
-        return -1;
+        int hash = 17;
+        hash = 31 * hash + (type == null ? 0 : type.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(powerConsumption);
+        hash = 31 * hash + numberOfSpeakers;
+        hash = 31 * hash + (frequentRange == null
+                            ? 0
+                            : frequentRange.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(cordLength);
+        return hash;
     }
 
     @Override
