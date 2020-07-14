@@ -74,14 +74,31 @@ public class TabletPc implements Appliance {
 
     @Override
     public boolean equals(Object o) {
-
-        return false;
+        if (this == o) {
+            return true;
+        }
+        if ((o == null) || (this.getClass() != o.getClass())) {
+            return false;
+        }
+        TabletPc tabletPc = (TabletPc) o;
+        return (type == tabletPc.type)
+                && (batteryCapacity == tabletPc.batteryCapacity)
+                && (displayInches == tabletPc.displayInches)
+                && (memoryRom == tabletPc.memoryRom)
+                && (flashMemoryCapacity == tabletPc.flashMemoryCapacity)
+                && color.equals(tabletPc.color);
     }
 
     @Override
     public int hashCode() {
-
-        return -1;
+        int hash = 17;
+        hash = 31 * hash + (type == null ? 0 : type.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(batteryCapacity);
+        hash = 31 * hash + (int) Double.doubleToLongBits(displayInches);
+        hash = 31 * hash + (int) Double.doubleToLongBits(memoryRom);
+        hash = 31 * hash + (int) Double.doubleToLongBits(flashMemoryCapacity);
+        hash = 31 * hash + (color == null ? 0 : color.hashCode());
+        return hash;
     }
 
     @Override
