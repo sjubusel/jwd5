@@ -38,7 +38,7 @@ public class TabletPc implements Appliance {
 
     @Override
     public String receiveTypeName() {
-        return null;
+        return type.getName();
     }
 
     @Override

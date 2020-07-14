@@ -97,7 +97,7 @@ public class VacuumCleaner implements Appliance {
 
     @Override
     public String receiveTypeName() {
-        return null;
+        return type.getName();
     }
 
     @Override
