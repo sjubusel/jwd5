@@ -5,7 +5,6 @@ public final class SearchCriteria {
     private static final Class<Integer> INTEGER_CLASS = Integer.class;
     private static final Class<String> STRING_CLASS = String.class;
 
-
     public enum Oven {
         POWER_CONSUMPTION(DOUBLE_CLASS), WEIGHT(DOUBLE_CLASS),
         CAPACITY(DOUBLE_CLASS), DEPTH(DOUBLE_CLASS), HEIGHT(DOUBLE_CLASS),
