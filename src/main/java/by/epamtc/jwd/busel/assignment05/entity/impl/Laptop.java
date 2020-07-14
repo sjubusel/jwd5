@@ -85,14 +85,35 @@ public class Laptop implements Appliance {
 
     @Override
     public boolean equals(Object o) {
-
-        return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Laptop laptop = (Laptop) o;
+        return (type == laptop.type)
+                && (batteryCapacity == laptop.batteryCapacity)
+                && operatingSystem.equals(laptop.operatingSystem)
+                && (memoryRom == laptop.memoryRom)
+                && (systemMemory == laptop.systemMemory)
+                && (cpu == laptop.cpu)
+                && (displayInches == laptop.displayInches);
     }
 
     @Override
     public int hashCode() {
-
-        return -1;
+        int hash = 17;
+        hash = 31 * hash + ((type == null) ? 0 : type.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(batteryCapacity);
+        hash = 31 * hash + ((operatingSystem == null)
+                            ? 0
+                            : operatingSystem.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(memoryRom);
+        hash = 31 * hash + (int) Double.doubleToLongBits(systemMemory);
+        hash = 31 * hash + (int) Double.doubleToLongBits(cpu);
+        hash = 31 * hash + (int) Double.doubleToLongBits(displayInches);
+        return hash;
     }
 
     @Override
