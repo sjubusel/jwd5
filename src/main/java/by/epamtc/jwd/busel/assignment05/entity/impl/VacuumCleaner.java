@@ -85,14 +85,33 @@ public class VacuumCleaner implements Appliance {
 
     @Override
     public boolean equals(Object o) {
-
-        return false;
+        if (this == o) {
+            return true;
+        }
+        if ((o == null) || (this.getClass() != o.getClass())) {
+            return false;
+        }
+        VacuumCleaner vacuumCleaner = (VacuumCleaner) o;
+        return (type == vacuumCleaner.type)
+                && (powerConsumption == vacuumCleaner.powerConsumption)
+                && filterType.equals(vacuumCleaner.filterType)
+                && bagType.equals(vacuumCleaner.bagType)
+                && wandType.equals(vacuumCleaner.wandType)
+                && (motorSpeedRegulation == vacuumCleaner.motorSpeedRegulation)
+                && (cleaningWidth == vacuumCleaner.cleaningWidth);
     }
 
     @Override
     public int hashCode() {
-
-        return -1;
+        int hash = 17;
+        hash = 31 * hash + (type == null ? 0 : type.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(powerConsumption);
+        hash = 31 * hash + (filterType == null ? 0 : filterType.hashCode());
+        hash = 31 * hash + (bagType == null ? 0 : bagType.hashCode());
+        hash = 31 * hash + (wandType == null ? 0 : wandType.hashCode());
+        hash = 31 * hash + (int) Double.doubleToLongBits(motorSpeedRegulation);
+        hash = 31 * hash + (int) Double.doubleToLongBits(cleaningWidth);
+        return hash;
     }
 
     @Override
