@@ -8,4 +8,9 @@ public class TabletPcCriteriaValidation implements CriteriaValidation {
     public Class<?> getContractParamValueClass(String paramKey) {
         return SearchCriteria.TabletPc.valueOf(paramKey).getClassStructure();
     }
+
+    @Override
+    public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
+        return SearchCriteria.TabletPc.valueOf(paramKey).isAcceptable(paramValue);
+    }
 }

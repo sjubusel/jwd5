@@ -8,4 +8,10 @@ public class RefrigeratorCriteriaValidation implements CriteriaValidation {
     public Class<?> getContractParamValueClass(String paramKey) {
         return SearchCriteria.Refrigerator.valueOf(paramKey).getClassStructure();
     }
+
+    @Override
+    public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
+        return SearchCriteria.Refrigerator.valueOf(paramKey)
+                .isAcceptable(paramValue);
+    }
 }

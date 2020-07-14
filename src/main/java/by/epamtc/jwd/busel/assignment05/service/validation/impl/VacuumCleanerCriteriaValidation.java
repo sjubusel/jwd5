@@ -8,4 +8,10 @@ public class VacuumCleanerCriteriaValidation implements CriteriaValidation {
     public Class<?> getContractParamValueClass(String paramKey) {
         return SearchCriteria.VacuumCleaner.valueOf(paramKey).getClassStructure();
     }
+
+    @Override
+    public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
+        return SearchCriteria.VacuumCleaner.valueOf(paramKey)
+                .isAcceptable(paramValue);
+    }
 }
