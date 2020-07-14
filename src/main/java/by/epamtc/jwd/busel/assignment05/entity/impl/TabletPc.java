@@ -24,6 +24,54 @@ public class TabletPc implements Appliance {
         this.color = color;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public double getBatteryCapacity() {
+        return batteryCapacity;
+    }
+
+    public void setBatteryCapacity(double batteryCapacity) {
+        this.batteryCapacity = batteryCapacity;
+    }
+
+    public double getDisplayInches() {
+        return displayInches;
+    }
+
+    public void setDisplayInches(double displayInches) {
+        this.displayInches = displayInches;
+    }
+
+    public double getMemoryRom() {
+        return memoryRom;
+    }
+
+    public void setMemoryRom(double memoryRom) {
+        this.memoryRom = memoryRom;
+    }
+
+    public double getFlashMemoryCapacity() {
+        return flashMemoryCapacity;
+    }
+
+    public void setFlashMemoryCapacity(double flashMemoryCapacity) {
+        this.flashMemoryCapacity = flashMemoryCapacity;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public boolean equals(Object o) {
 
