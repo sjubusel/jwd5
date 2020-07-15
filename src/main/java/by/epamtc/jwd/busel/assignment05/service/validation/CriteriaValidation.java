@@ -26,8 +26,8 @@ public interface CriteriaValidation {
                 throw new ServiceException("INCOMPATIBLE TYPE OF" +
                         " INPUTTED PARAMETER");
             }
-            if (!isParameterValueAcceptable(param.getKey(), param.getValue())) {
-                throw new ServiceException("INADMISSIBLE PARAMETER VALUE");
+            if (!isParameterValueAcceptable(key, value)) {
+                return false;
             }
         }
         return true;
