@@ -11,6 +11,7 @@ public class OvenCriteriaValidation implements CriteriaValidation {
 
     @Override
     public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
-        return SearchCriteria.Oven.valueOf(paramKey).isAcceptable(paramValue);
+        SearchCriteria.Oven oven = SearchCriteria.Oven.valueOf(paramKey);
+        return (paramValue != null) && oven.isAcceptable(paramValue);
     }
 }

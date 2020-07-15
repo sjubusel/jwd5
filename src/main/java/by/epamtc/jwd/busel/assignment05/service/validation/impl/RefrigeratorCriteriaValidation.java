@@ -11,7 +11,7 @@ public class RefrigeratorCriteriaValidation implements CriteriaValidation {
 
     @Override
     public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
-        return SearchCriteria.Refrigerator.valueOf(paramKey)
-                .isAcceptable(paramValue);
+        SearchCriteria.Refrigerator ref = SearchCriteria.Refrigerator.valueOf(paramKey);
+        return (paramValue != null) && ref.isAcceptable(paramValue);
     }
 }

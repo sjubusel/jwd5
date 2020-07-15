@@ -11,6 +11,7 @@ public class SpeakersCriteriaValidation implements CriteriaValidation {
 
     @Override
     public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
-        return SearchCriteria.Speakers.valueOf(paramKey).isAcceptable(paramValue);
+        SearchCriteria.Speakers speakers = SearchCriteria.Speakers.valueOf(paramKey);
+        return (paramValue != null) && speakers.isAcceptable(paramValue);
     }
 }

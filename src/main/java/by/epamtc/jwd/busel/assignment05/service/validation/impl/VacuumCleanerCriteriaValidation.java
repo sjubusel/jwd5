@@ -11,7 +11,8 @@ public class VacuumCleanerCriteriaValidation implements CriteriaValidation {
 
     @Override
     public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
-        return SearchCriteria.VacuumCleaner.valueOf(paramKey)
-                .isAcceptable(paramValue);
+        SearchCriteria.VacuumCleaner vacuumCleaner
+                = SearchCriteria.VacuumCleaner.valueOf(paramKey);
+        return (paramValue != null) && vacuumCleaner.isAcceptable(paramValue);
     }
 }

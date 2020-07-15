@@ -11,6 +11,7 @@ public class LaptopCriteriaValidation implements CriteriaValidation {
 
     @Override
     public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
-        return SearchCriteria.Laptop.valueOf(paramKey).isAcceptable(paramValue);
+        SearchCriteria.Laptop laptop = SearchCriteria.Laptop.valueOf(paramKey);
+        return (paramValue != null) && laptop.isAcceptable(paramValue);
     }
 }

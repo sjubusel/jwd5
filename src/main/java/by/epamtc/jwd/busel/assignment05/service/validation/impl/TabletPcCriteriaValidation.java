@@ -11,6 +11,7 @@ public class TabletPcCriteriaValidation implements CriteriaValidation {
 
     @Override
     public boolean isParameterValueAcceptable(String paramKey, Object paramValue) {
-        return SearchCriteria.TabletPc.valueOf(paramKey).isAcceptable(paramValue);
+        SearchCriteria.TabletPc pc = SearchCriteria.TabletPc.valueOf(paramKey);
+        return (paramValue != null) && pc.isAcceptable(paramValue);
     }
 }
