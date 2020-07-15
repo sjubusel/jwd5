@@ -25,6 +25,7 @@ public class Main {
         try {
             appliances = service.find(criteriaOven);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
@@ -42,6 +43,7 @@ public class Main {
         try {
             appliances = service.find(criteriaLaptop);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
@@ -59,6 +61,7 @@ public class Main {
         try {
             appliances = service.find(criteriaRefrigerator);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
@@ -76,6 +79,7 @@ public class Main {
         try {
             appliances = service.find(criteriaVacuumCleaner);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
@@ -95,6 +99,7 @@ public class Main {
         try {
             appliances = service.find(criteriaTabletPc);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
@@ -113,6 +118,7 @@ public class Main {
         try {
             appliances = service.find(criteriaSpeakers);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
@@ -131,6 +137,7 @@ public class Main {
         try {
             appliances = service.find(criteriaNotFound);
         } catch (ServiceException e) {
+            //logging simulation
             System.err.println(e.toString());
             System.out.println("SOMETHING WENT WRONG, PLEASE CONTACT: " +
                     "sergey.busel@tut.by");
